@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="principal.html"><img src="https://www.zarla.com/images/zarla-s-1x1-2400x2400-20211119-wwrwkmmjcm7hh3wfkvcc.png?crop=1:1,smart&width=250&dpr=2" alt="Logo"></a>
+        </div>
+    </nav>
+    
+    <div class="cuadro">
+        <h2>Iniciar Sesión</h2>
+        <br>
+        <form action="#" method="POST">
+            <label for="email">Correo electrónico:</label>
+            <div>
+                <input type="email" id="email" name="email" placeholder="Ingresa tu correo" required>
+            </div>
+           
+            <label for="password">Contraseña:</label>
+            <br>
+            <br>
+            <div class="container">
+                <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
+                <i class='bx bx-show-alt' id="togglePassword"></i>
+            </div>
+            
+            <button type="submit">Iniciar Sesión</button>
+            <button type="button" onclick="window.location.href='registro.html'">Crear Cuenta</button>
+        </form>
+        <a href="#" class="forgot-password">¿Ha olvidado su contraseña?</a>
+    </div>
+    
+    <script src="index.js"></script>
+    <script>
+        function togglePassword() {
+            const passwordField = document.getElementById('password');
+            const icon = document.querySelector('.toggle-password');
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                icon.classList.remove('bx-show-alt');
+                icon.classList.add('bx-hide');
+            } else {
+                passwordField.type = 'password';
+                icon.classList.remove('bx-hide');
+                icon.classList.add('bx-show-alt');
+            }
+        }
+    </script>
+</body>
+</html>
